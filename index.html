@@ -28,6 +28,132 @@
     />
   </head>
   <body>
+    <header>
+      <div class="navbar bg-[#15803d] shadow-sm">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="-1"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 w-32 mt-3 p-2 shadow"
+            >
+              <li class="bg-[#facc15] font-bold text-[#157f3c] mb-1">
+                <a>About</a>
+              </li>
+              <li class="bg-[#facc15] font-bold text-[#15803d] mb-1">
+                <a>Gallery</a>
+              </li>
+              <li class="bg-[#facc15] font-bold text-[#15803d] mb-1">
+                <a>Plant a Tree</a>
+              </li>
+            </ul>
+          </div>
+          <a class="flex items-center text-xl text-white font-bold border-none"
+            ><img
+              class="w-20 invert mr-[-20px]"
+              src="./assets/hero-leaf1.png"
+              alt=""
+            />
+            <span class="lg:text-3xl text-nowrap z-10">Green Planet</span></a
+          >
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal space-x-8">
+            <li class="text-white font-bold"><a>About</a></li>
+            <li class="text-white font-bold">
+              <a>Gallery</a>
+            </li>
+            <li><a class="text-white font-bold">Plant a Tree</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a
+            class="btn bg-[#facc15] border-none rounded-2xl text-[#15803d] font-bold"
+            >Plant a Tree</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="bg-[#b3ddc4] min-h-[400px] grid lg:grid-cols-3">
+        <div class="hidden lg:flex justify-start">
+          <img class="mt-5" src="./assets/hero-leaf1.png" alt="" />
+        </div>
+        <div
+          class="flex flex-col justify-center items-center px-4 bg-[url('./assets/tropical-plant-transparent-background.png')] w-full bg-center bg-contain bg-no-repeat"
+        >
+          <h1
+            class="text-3xl lg:text-4xl font-extrabold text-white text-center drop-shadow-lg"
+          >
+            Plant a Tree, Grow a Future
+          </h1>
+          <p
+            class="text-center font-bold text-white drop-shadow-lg lg:text-xl my-3"
+          >
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future generations.
+          </p>
+
+          <a
+            class="btn bg-[#facc15] border-none rounded-2xl text-[#15803d] font-bold"
+            >Get Involved</a
+          >
+        </div>
+        <div class="hidden lg:flex justify-end">
+          <img class="mt-5" src="./assets/hero-leaf2.png" alt="" />
+        </div>
+      </section>
+
+      <section class="pt-10 bg-[#DCFCE7]">
+        <h1 class="text-center">Choose Your Tress</h1>
+
+        <!-- Container -->
+        <div class="w-11/12 mx-auto mt-5 grid grid-cols-12 gap-5">
+          <!-- left/category container -->
+          <div class="col-span-full lg:col-span-2 p-2">
+            <h1 class="text-xl font-bold mb-5 text-center lg:text-left">
+              Categories
+            </h1>
+            <!-- Loading page show -->
+            <div id="spiner" class="hidden">
+              <span class="loading loading-spinner loading-xl h-full"></span>
+            </div>
+            <div
+              id="categoryContainer"
+              class="space-y-2 flex items-center flex-wrap gap-4 justify-between"
+            ></div>
+          </div>
+          <!-- category container ends -->
+
+          <!-- trees container -->
+          <div
+            id="treeContainer"
+            class="col-span-full h-full lg:col-span-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          ></div>
+          <!-- trees container ends  -->
+          <!-- cart container -->
+          <div class="col-span-full h-full lg:col-span-2 bg-cyan-300"></div>
+        </div>
+      </section>
+    </main>
+
     <script src="./script.js"></script>
   </body>
 </html>
