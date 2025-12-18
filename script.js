@@ -75,14 +75,16 @@ const loadAllTreeBtn = async () => {
     console.log(error);
   }
 };
+
 const displayAllTree = (plants) => {
   treeContainer.innerHTML = "";
   plants.forEach((plant) => {
+    // modalShow(plant);
     // console.log(plant);
     treeContainer.innerHTML += `
     
     <div id=${plant.id} class="space-y-3 rounded-lg p-3 h-fit bg-white">
-              <img class="w-full h-72 object-cover rounded-t-lg" src="${plant.image}" alt="" />
+              <img onclick="modalShow(${plant.id})" class="w-full h-72 object-cover rounded-t-lg" src="${plant.image}" alt="" />
               <h2 class="text-xl font-bold">${plant.name}</h2>
               <p>${plant.description}</p>
               <div class="flex justify-between items-center">
@@ -97,6 +99,31 @@ const displayAllTree = (plants) => {
     
     `;
   });
+};
+
+const modalShow = (id) => {
+  const fetchDetails = async () => {
+    try {
+      const reg = await fetch(
+        `https://openapi.programming-hero.com/api/plant/${id}`
+      );
+      const data = await reg.json();
+      const plant = data.plants;
+
+      document.getElementById("modalContainer").innerHTML = `
+<img class="w-full object-cover rounded-t-lg" src="${plant.image}" alt="" />
+<p class="my-2 text-xl font-bold">${plant.name}</p>
+<p class="my-2">${plant.description}</p>
+<p class="my-2 font-bold">Price : ${plant.price}</p>
+<p class="my-2">${plant.category}</p>
+
+`;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  fetchDetails();
+  myModal.showModal();
 };
 
 const othersCategory = (e) => {
