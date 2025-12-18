@@ -89,7 +89,7 @@ const displayAllTree = (plants) => {
               <p>${plant.description}</p>
               <div class="flex justify-between items-center">
                 <button class="btn">${plant.category}</button>
-                <button class="btn">${plant.price}</button>
+                <button class="btn">${plant.price} TK</button>
               </div>
               <button onclick="addToCart('${plant.id}','${plant.name}','${plant.price}')" class="bg-green-700 py-2 w-full rounded-2xl text-white cursor-pointer">
                 Add to cart
@@ -179,11 +179,11 @@ let displayCart = (cart) => {
     cartContainer.innerHTML += `
 
 <div
-              class="flex justify-between items-center mt-5 px-6 py-2 rounded-xl shadow-2xl bg-white"
+              class="flex justify-between items-center mt-5 px-6 py-2 rounded-xl shadow-2xl bg-[#DCFCE7]"
             >
               <div>
                 <p>${item.name}</p>
-                <span class="mr-2" id="itemPrice">${item.price}</span>
+                <span class="mr-2 font-semibold" id="itemPrice">${item.price} TK</span>
                
               </div>
               <div class="text-red-600 cursor-pointer hover:font-semibold transition-all" id=${item.id}>delete</div>

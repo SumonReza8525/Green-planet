@@ -166,17 +166,50 @@
           <!-- category container ends -->
 
           <!-- trees container -->
-          <div
-            id="treeContainer"
-            class="col-span-full h-full lg:col-span-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-          ></div>
+          <div class="col-span-full h-full lg:col-span-8">
+            <div
+              id="treeContainer"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            ></div>
+            <div class="my-16">
+              <h1 class="text-center font-bold text-3xl mb-8">
+                About the Campaign
+              </h1>
+
+              <div
+                class="flex flex-col md:flex-row justify-between items-center"
+              >
+                <div class="flex-1">
+                  <img src="./assets/about.png" alt="" />
+                </div>
+                <div class="flex-1">
+                  <p class="text-justify my-5 text-lg text-gray-600">
+                    Green Earth is a global tree plantation initiative dedicated
+                    to fighting climate change. Since our start, we’ve planted
+                    over 500,000 trees worldwide. By joining our campaign, you
+                    help restore forests, create habitats for wildlife, and
+                    combat global warming.
+                  </p>
+                  <ul class="ml-10 list-disc">
+                    <li>Restoration of natural habitats</li>
+                    <li>Improvement of air quality</li>
+                    <li>Support for local communities</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- trees container ends  -->
           <!-- cart container -->
-          <div class="col-span-full h-fit lg:col-span-2 bg-cyan-300 p-3">
-            <h1 class="text-3xl mb-5">Your Cart</h1>
+          <div
+            class="col-span-full rounded-md h-fit lg:col-span-2 bg-[#15803d] p-3"
+          >
+            <h1 class="text-3xl mb-5 font-bold text-white">Your Cart</h1>
 
             <div id="cartContainer"></div>
-            <div class="mt-5">Total : <span id="total"></span></div>
+            <div class="mt-5 font-bold text-[#facc15]">
+              Total : <span id="total"></span> TK
+            </div>
           </div>
         </div>
       </section>
@@ -192,6 +225,33 @@
             <button>close</button>
           </form>
         </dialog>
+      </section>
+
+      <section class="bg-[#b3ddc4] pb-10 pt-5">
+        <div class="w-11/12 mx-auto">
+          <h1 class="text-3xl font-bold text-center mb-10">Our Impact</h1>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+            <div
+              class="flex flex-col items-center justify-center h-[120px] rounded-xl bg-white"
+            >
+              <p class="text-3xl text-[#15803d] font-bold mb-2">500K+</p>
+              <p>Trees Planted</p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center h-[120px] rounded-xl bg-white"
+            >
+              <p class="text-3xl text-[#15803d] font-bold mb-2">120K+</p>
+              <p>Communities Involved</p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center h-[120px] rounded-xl bg-white"
+            >
+              <p class="text-3xl text-[#15803d] font-bold mb-2">30K+</p>
+              <p>Countries Reached</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
