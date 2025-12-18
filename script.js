@@ -157,11 +157,15 @@ const fetchCategoryWiseTrees = async (id) => {
 
 const addToCart = (id, name, price) => {
   //   console.log(id, name, price);
+  const exist = cart.some((item) => item.id == id);
 
-  cart.push({ id: id, name: name, price: price });
-  //   console.log(cart);
+  if (exist) return;
+  else {
+    cart.push({ id: id, name: name, price: price });
+    //   console.log(cart);
 
-  displayCart(cart);
+    displayCart(cart);
+  }
 };
 
 let displayCart = (cart) => {
@@ -205,3 +209,34 @@ document.getElementById("cartContainer").addEventListener("click", (e) => {
 
 loadCategories();
 loadAllTreeBtn();
+
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const allBtns = document.querySelectorAll("#categoryContainer .tree");
+  allBtns.forEach((btn) => {
+    btn.classList.remove("bg-green-700", "text-white");
+    const btn1 = document.querySelector("#btn-1");
+    btn1.classList.remove("bg-green-700", "text-white");
+  });
+  const input = document.getElementById("searchInput");
+  const text = input.value.trim().toLowerCase();
+
+  const fetchAllWords = async () => {
+    try {
+      const reg = await fetch(
+        `https://openapi.programming-hero.com/api/plants`
+      );
+      const data = await reg.json();
+
+      const plants = data.plants;
+      const newArr = plants.filter((item) =>
+        item.name.toLowerCase().includes(text)
+      );
+      input.value = "";
+      displayAllTree(newArr);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  fetchAllWords();
+});

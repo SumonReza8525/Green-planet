@@ -122,6 +122,27 @@
       </section>
 
       <section class="pt-10 bg-[#DCFCE7]">
+        <section class="mb-6 flex justify-center">
+          <div class="join">
+            <div>
+              <label class="input validator join-item">
+                <input
+                  id="searchInput"
+                  type="text"
+                  placeholder="Search plant"
+                  required
+                />
+              </label>
+            </div>
+            <button
+              id="searchBtn"
+              class="btn bg-[#facc15] text-[#15803d] font-bold join-item"
+            >
+              Search
+            </button>
+          </div>
+        </section>
+
         <h1 class="text-center text-3xl font-bold text-gray-500">
           Choose Your Tress
         </h1>
@@ -151,7 +172,7 @@
           ></div>
           <!-- trees container ends  -->
           <!-- cart container -->
-          <div class="col-span-full h-full lg:col-span-2 bg-cyan-300 p-3">
+          <div class="col-span-full h-fit lg:col-span-2 bg-cyan-300 p-3">
             <h1 class="text-3xl mb-5">Your Cart</h1>
 
             <div id="cartContainer"></div>
