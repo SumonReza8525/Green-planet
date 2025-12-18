@@ -122,7 +122,9 @@
       </section>
 
       <section class="pt-10 bg-[#DCFCE7]">
-        <h1 class="text-center">Choose Your Tress</h1>
+        <h1 class="text-center text-3xl font-bold text-gray-500">
+          Choose Your Tress
+        </h1>
 
         <!-- Container -->
         <div class="w-11/12 mx-auto mt-5 grid grid-cols-12 gap-5">
@@ -149,7 +151,12 @@
           ></div>
           <!-- trees container ends  -->
           <!-- cart container -->
-          <div class="col-span-full h-full lg:col-span-2 bg-cyan-300"></div>
+          <div class="col-span-full h-full lg:col-span-2 bg-cyan-300 p-3">
+            <h1 class="text-3xl mb-5">Your Cart</h1>
+
+            <div id="cartContainer"></div>
+            <div class="mt-5">Total : <span id="total"></span></div>
+          </div>
         </div>
       </section>
     </main>
